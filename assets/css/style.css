@@ -1,0 +1,44 @@
+
+
+body {
+    background-image: url("assets/images/american-pattern-composed-from-national-flags-of-the-united-states-of-america-on-background-with-alpha-channel-4k-ultrahd-motion-graphic-come-in-on-scene-and-come-out-animation_rya7zeabe_thumbnail-full05.png");
+}
+
+.gameFront {
+    background-color: white;
+    height: 75%;
+    width: 75%;
+    position: absolute;
+    left: 120px;
+    opacity: 0.98;
+    margin: 50px;
+    padding: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+#MainTitle {
+    font-family: 'Playfair Display',
+        serif;
+    font-weight: 900;
+    font-size: 80px;
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
+}
+
+#MainSubTitle {
+    font-family: 'Assistant',
+        sans-serif;
+    font-weight: 100;
+    text-align: center;
+    font-size: 25px;
+}
+
+#buttonId {
+    text-align: center;
+}
+
+#startButton{
+    
+}

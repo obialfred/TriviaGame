@@ -1,0 +1,45 @@
+"Advanced Trivia"
+- One question is shown at a time w/ 4 options. 
+- 30 second timer applies to that specific question.
+- Reset Game not the whole page
+
+Global Variables:
+var correctAns = 0;
+var incorrectAns = 0;
+var unAns = 0;
+var quesTimer = (code here);
+var ansTimer = (code here);
+var ans = " ";
+
+
+function gameLogic() {
+	set timer function
+
+	(run timer for 30 seconds)
+
+	if (userChoice(true)) {
+		('p').text("Correct!")
+		"show (this (this question's)) correct answer for 6 seconds"
+		correctAns++;
+
+	} else if (userChoice(false)) {
+		('p').text("Not correct. The answer is: " + ans);
+		"show (this (this question's)) correct answer for 6 seconds"
+		incorrectAns++;
+
+	} else if ("timer hits 0"){
+
+		('p').text("Time's Up!");
+		"show (this (this question's)) correct answer for 6 seconds"
+		unAns++;
+
+
+	}
+	
+
+}
+
+
+function userChoice() {
+	
+}
