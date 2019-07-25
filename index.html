@@ -14,7 +14,7 @@
 
     <style type="text/css">
         body {
-            background-image: url("assets/images/american-pattern-composed-from-national-flags-of-the-united-states-of-america-on-background-with-alpha-channel-4k-ultrahd-motion-graphic-come-in-on-scene-and-come-out-animation_rya7zeabe_thumbnail-full05.png");
+            background-image: url("assets/images/background.png");
         }
     </style>
 
@@ -22,9 +22,11 @@
 </head>
 
 <body>
-    <div class = "backLayer"></div>
-    <div class= "gameFront">
-        <div id="cardBanner"><h1 id="MainTitle">Freedom Triv</h1></div>
+    <div class="backLayer"></div>
+    <div class="gameFront">
+        <div id="cardBanner">
+            <h1 id="MainTitle">Freedom Triv</h1>
+        </div>
         <br>
         <br>
         <!-- <br>
@@ -32,10 +34,129 @@
         <br> -->
         <h2 id="MainSubTitle">How well do you know your country?</h2>
         <br>
+        <div class="imgSpace">
+            <img class="frontPics" src="assets/images/nyc.gif">
+            <img class="frontPics" src="assets/images/tumbleweed.gif">
+            <img class="frontPics" src="assets/images/trumppelosi.gif">
+        </div>
         <br>
         <br>
-        <div id=buttonId><button type="button" class="btn btn-primary btn-lg">Start</button></div>
+        <div id=buttonId><button type="button" class="btn btn-primary btn-lg">start</button></div>
     </div>
+
+    <div class="questions">
+        <p>What is the largest city in the U.S?:</p>
+        <form>
+            <input type="radio" name="largeCity" value="Chicago" id="m"> <label for="m"> Chicago </label><br>
+            <input type="radio" name="largeCity" value="LA"> Los Angeles <br>
+            <input type="radio" name="largeCity" value="Denver"> Denver <br>
+            <input type="radio" name="largeCity" value="NY"> New York City <br>
+        </form>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var num = 5;
+
+        $(document).ready(function () {
+            $("button").click(function () {
+                // Should erase everything from "gameFront" and replace with time question and choices
+                questionHandler();
+
+            });
+
+        });
+
+        function decrease(timer) {
+            num--;
+            $('#MainTitle').text("Time Remaining: " + num);
+            if (num < 0) {
+                $('#MainTitle').text("Time's up!");
+                $('#cardBanner').css('background-image', "url(assets/images/siren.gif)");
+                clearInterval(timer);
+                return timer;
+            }
+
+        }
+        $questions = $('.questions');
+        $button = $('button');
+        $heading = $('h2');
+        
+
+        // function setColor ('.cardBanner', color){
+        //     $('.cardBanner').css('background-color', 'red');
+        // }
+
+        // function stop() {
+        //     if (num == 0){
+        //         clearInterval(timer);
+        //     } 
+        // }
+
+        function questionHandler() {
+            $('#MainTitle').text("Time Remaining: " + num);
+            var timer = setInterval(decrease, 1 * 1000);
+            // $('#MainSubTitle').text("What is the largest ciy in the U.S?");
+            $('.imgSpace').html($questions);
+            $button.hide();
+            $heading.hide();
+
+        }
+
+
+
+  // $(".btn btn-primary btn-lg").click function() {
+        //     $('#MainTitle').text("00:00");
+        // });
+
+//         "Advanced Trivia"
+// - One question is shown at a time w/ 4 options. 
+// - 30 second timer applies to that specific question.
+// - Reset Game not the whole page
+
+// Global Variables:
+// var correctAns = 0;
+// var incorrectAns = 0;
+// var unAns = 0;
+// var quesTimer = (code here);
+// var ansTimer = (code here);
+// var ans = " ";
+
+
+// function gameLogic() {
+// 	set timer function
+
+// 	(run timer for 30 seconds)
+
+// 	if (userChoice(true)) {
+// 		('p').text("Correct!")
+// 		"show (this (this question's)) correct answer for 6 seconds"
+// 		correctAns++;
+
+// 	} else if (userChoice(false)) {
+// 		('p').text("Not correct. The answer is: " + ans);
+// 		"show (this (this question's)) correct answer for 6 seconds"
+// 		incorrectAns++;
+
+// 	} else if ("timer hits 0"){
+
+// 		('p').text("Time's Up!");
+// 		"show (this (this question's)) correct answer for 6 seconds"
+// 		unAns++;
+
+
+// 	}
+
+
+// }
+
+
+// function userChoice() {
+
+// }
+
+    </script>
 </body>
 
 </html>

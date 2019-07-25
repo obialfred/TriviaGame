@@ -1,8 +1,8 @@
-
+/* 
 
 body {
-    background-image: url("assets/images/american-pattern-composed-from-national-flags-of-the-united-states-of-america-on-background-with-alpha-channel-4k-ultrahd-motion-graphic-come-in-on-scene-and-come-out-animation_rya7zeabe_thumbnail-full05.png");
-}
+    background-image: url("images/background.png");
+} */
 
 .gameFront {
     background-color: white;
@@ -10,7 +10,7 @@ body {
     width: 75%;
     position: absolute;
     left: 120px;
-    opacity: 0.93;
+    opacity: 0.97;
     margin: 50px;
     /* padding: 40px; */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -52,10 +52,12 @@ body {
     font-size: 25px;
     font-weight: 900;
     position: relative;
-    top: 165px;
-    padding: 19px 120px;
-    border-radius: 1px;
-    
+    top: 420px;
+    padding: 19px 80px;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: black;
+    border-color: black;
 
 }
 
@@ -87,9 +89,36 @@ body {
       padding: 0px;
       top: 0px;
       opacity: 0.9;
+      
 
   }
+
+  .frontPics {
+      height: 230px;
+      width: 300px;
+      position: relative;
+     
+  }
+
+  .imgSpace {
+     position: absolute; 
+     top: 260px;
+     left: 35px;
+     width: 100%;
+  }
   
+  .questions {
+      height: 60%;
+      width: 60%;
+      font-size: 27px;
+      font-family: 'Playfair Display',
+        serif;
+  }
+
+  form{
+    height: 60%;
+    width: 60%;
+  }
   /* .backLayer:after{
    content: '';
    width: 300px;
