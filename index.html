@@ -14,7 +14,7 @@
 
     <style type="text/css">
         body {
-            background-image: url("assets/images/american-pattern-composed-from-national-flags-of-the-united-states-of-america-on-background-with-alpha-channel-4k-ultrahd-motion-graphic-come-in-on-scene-and-come-out-animation_rya7zeabe_thumbnail-full05.png");
+            background-image: url("assets/images/background.png");
         }
     </style>
 
@@ -22,9 +22,11 @@
 </head>
 
 <body>
-    <div class = "backLayer"></div>
-    <div class= "gameFront">
-        <div id="cardBanner"><h1 id="MainTitle">Freedom Triv</h1></div>
+    <div class="backLayer"></div>
+    <div class="gameFront">
+        <div id="cardBanner">
+            <h1 id="MainTitle">Freedom Triv</h1>
+        </div>
         <br>
         <br>
         <!-- <br>
@@ -32,10 +34,257 @@
         <br> -->
         <h2 id="MainSubTitle">How well do you know your country?</h2>
         <br>
+        <div class="imgSpace">
+            <img class="frontPics" src="assets/images/nyc.gif">
+            <img class="frontPics" src="assets/images/tumbleweed.gif">
+            <img class="frontPics" src="assets/images/trumppelosi.gif">
+        </div>
         <br>
         <br>
-        <div id=buttonId><button type="button" class="btn btn-primary btn-lg">Start</button></div>
+        <div id=buttonId><button id="startButton" type="button" class="btn btn-primary btn-lg">start</button></div>
     </div>
+
+    <div class="questions1">
+        <p>What is the largest city in the U.S?:</p>
+        <form id="q1" ans="">
+            <input type="button" name="largeCity" value="Chicago" id="L" ans="NEW YORK!"> <label for="m"> Chicago
+            </label><br>
+            <input type="button" name="largeCity" value="LA" id="L" ans="NEW YORK!"> Los Angeles <br>
+            <input type="button" name="largeCity" value="Denver" id="L" ans="NEW YORK!"> Denver <br>
+            <input type="button" name="largeCity" value="NYC" id="W" ans="NEW YORK!"> New York City <br>
+        </form>
+    </div>
+
+    <div class="questions2">
+        <p>Which U.S. City is nicknamed Sin City?:</p>
+        <form id="q2" ans="">
+            <input type="button" name="largeCity" value="NYC" id="L" ans="Las Vegas!"> <label for="m"> New York City
+            </label><br>
+            <input type="button" name="largeCity" value="D.C." id="L" ans="Las Vegas!"> Washington D.C. <br>
+            <input type="button" name="largeCity" value="Las Vegas" id="W" ans="Las Vegas!"> Las Vegas <br>
+            <input type="button" name="largeCity" value="Austin" id="L" ans="Las Vegas!"> Austin <br>
+        </form>
+    </div>
+
+
+    <div class="questions3">
+        <p>Which state, as it's own country, would rank at 5th in Global GDP? :</p>
+        <form id="q3" ans="">
+            <input type="button" name="largeCity" value="California" id="W" ans="California!"> <label for="m">
+                California
+            </label><br>
+            <input type="button" name="largeCity" value="Texas" id="L" ans="California!"> Texas <br>
+            <input type="button" name="largeCity" value="Illinois" id="L" ans="California!"> Illinois <br>
+            <input type="button" name="largeCity" value="New York" id="L" ans="California!"> New York <br>
+        </form>
+    </div>
+
+
+    <!-- <div class="questions">
+        <p>What is the largest city in the U.S?:</p>
+        <form id="q1" ans="">
+            <input type="button" name="largeCity" value="Chicago" id="L" ans="NEW YORK!"> <label for="m"> Chicago
+            </label><br>
+            <input type="button" name="largeCity" value="LA" id="L" ans="NEW YORK!"> Los Angeles <br>
+            <input type="button" name="largeCity" value="Denver" id="L" ans="NEW YORK!"> Denver <br>
+            <input type="button" name="largeCity" value="NYC" id="W" ans="NEW YORK!"> New York City <br>
+        </form>
+    </div>
+
+
+    <div class="questions">
+        <p>What is the largest city in the U.S?:</p>
+        <form id="q1" ans="">
+            <input type="button" name="largeCity" value="Chicago" id="L" ans="NEW YORK!"> <label for="m"> Chicago
+            </label><br>
+            <input type="button" name="largeCity" value="LA" id="L" ans="NEW YORK!"> Los Angeles <br>
+            <input type="button" name="largeCity" value="Denver" id="L" ans="NEW YORK!"> Denver <br>
+            <input type="button" name="largeCity" value="NYC" id="W" ans="NEW YORK!"> New York City <br>
+        </form>
+    </div> -->
+
+    <!-- <div class="questions">
+        <p>What is the largest city in the U.S?:</p>
+        <form>
+            <input type="radio" name="largeCity" value="Chicago" id="m"> <label for="m"> Chicago </label><br>
+            <input type="radio" name="largeCity" value="LA"> Los Angeles <br>
+            <input type="radio" name="largeCity" value="Denver"> Denver <br>
+            <input type="radio" name="largeCity" value="W"> New York City <br>
+        </form>
+    </div> -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var num = 5;
+        var q = $questions = $('.questions1');
+        var q = $questions2 = $('.questions2');
+        var q = $questions3 = $('.questions3');
+        $startButton = $('#startButton');
+        $heading = $('h2');
+        var dAns = $form = $('form');
+        var questionSelection = [$questions, $questions2, $questions3];
+        qRotator = 0;
+
+        // var q1Ans = 
+
+        // var userSel = $("input[name = 'largeCity']:checked").attr('id');
+
+        $(document).ready(function () {
+            button();
+            quizLogic();
+            // questionHandler();
+
+
+        });
+
+        function decrease(timer) {
+            num--;
+            $('#MainTitle').text("Time Remaining: " + num);
+            if (num < 0) {
+                timeOutBanner(timer, $form);
+            }
+
+        }
+
+        function timeOutBanner(timer, $form) {
+            $('#MainTitle').text("Time's up!");
+            $('#cardBanner').css('background-image', "url(assets/images/siren.gif)");
+            clearInterval(timer);
+            $('.imgSpace').html("<h2>The correct answer is: </h2><hr>" + $("input[type='button']").attr("ans"));
+            var num = 7;
+            var timer = setInterval(decrease, 1 * 1000);
+            return timer;
+
+        }
+
+        function lossBanner() {
+            $('#MainTitle').text("Nope!");
+            $('#cardBanner').css('background-image', "url(assets/images/IllBlushingArchaeocete-size_restricted.gif)");
+            clearInterval(timer);
+            $('.imgSpace').html("<h2>The correct answer is: </h2><hr>" + $("input[type='button']").attr(
+                "ans"));
+        }
+
+        function winBanner() {
+            $('#MainTitle').text("Correct!");
+            $('#cardBanner').css('background-image', "url(assets/images/giphy.gif)");
+            clearInterval(timer);
+            $('.imgSpace').html("<h2>The correct answer is: </h2><hr>" + $("input[type='button']").attr(
+                "ans"));
+                qRotator = 1;
+        }
+
+
+
+
+        function button() {
+            $('#startButton').click(function () {
+                function questionHandler() {
+                    $startButton.hide();
+                    $heading.hide();
+                    $('#MainTitle').text("Time Remaining: " + num);
+                    var timer = setInterval(decrease, 1 * 1000);
+                    $('.imgSpace').html(questionSelection[i]);
+                }
+                qRotator = 1;
+                for (i = 0; qRotator == 1; i++) {
+                    qRotator = 0;
+                    console.log(questionSelection[i]);
+                    questionHandler();
+                }
+
+            });
+
+        }
+        // $('#MainTitle').text("Time Remaining: " + num);
+        // var timer = setInterval(decrease, 1 * 1000);
+        // // $('#MainSubTitle').text("What is the largest city in the U.S?");
+        // $('.imgSpace').html($questions);
+
+
+
+
+
+        function quizLogic(qRotator) {
+            // var theAns = $("input[type='button']").attr("ans")
+            $("input[type='button']").on('click', function () {
+                
+                if ($(this).attr("id") == "W") {
+                    
+                    // alert('Win');
+                    winBanner();
+                    // $('#MainTitle').text("Correct!");
+                    // $('#cardBanner').css('background-image', "url(assets/images/giphy.gif)");
+                    // clearInterval(timer);
+                    // $('.imgSpace').html("<h2>The correct answer is: </h2><hr>" + $("input[type='button']").attr(
+                    //     "ans"));
+
+                } else if ($(this).attr("id") != "W") {
+                    // alert("nah");
+                    lossBanner();
+                }
+                // qRotator = 1;
+
+            });
+
+        }
+
+        // function quizLogic() {
+        //     if (this).
+        // };
+
+
+        // $(".btn btn-primary btn-lg").click function() {
+        //     $('#MainTitle').text("00:00");
+        // });
+
+        //         "Advanced Trivia"
+        // - One question is shown at a time w/ 4 options. 
+        // - 30 second timer applies to that specific question.
+        // - Reset Game not the whole page
+
+        // Global Variables:
+        // var correctAns = 0;
+        // var incorrectAns = 0;
+        // var unAns = 0;
+        // var quesTimer = (code here);
+        // var ansTimer = (code here);
+        // var ans = " ";
+
+
+        // function gameLogic() {
+        // 	set timer function
+
+        // 	(run timer for 30 seconds)
+
+        // 	if (userChoice(true)) {
+        // 		('p').text("Correct!")
+        // 		"show (this (this question's)) correct answer for 6 seconds"
+        // 		correctAns++;
+
+        // 	} else if (userChoice(false)) {
+        // 		('p').text("Not correct. The answer is: " + ans);
+        // 		"show (this (this question's)) correct answer for 6 seconds"
+        // 		incorrectAns++;
+
+        // 	} else if ("timer hits 0"){
+
+        // 		('p').text("Time's Up!");
+        // 		"show (this (this question's)) correct answer for 6 seconds"
+        // 		unAns++;
+
+
+        // 	}
+
+
+        // }
+
+
+        // function userChoice() {
+
+        // }
+    </script>
 </body>
 
 </html>
