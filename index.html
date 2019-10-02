@@ -14,7 +14,7 @@
 
     <style type="text/css">
         body {
-            background-image: url("assets/images/background.png");
+            background-image: url("./background.png");
         }
     </style>
 
@@ -35,9 +35,9 @@
         <h2 id="MainSubTitle">How well do you know your country?</h2>
         <br>
         <div class="imgSpace">
-            <img class="frontPics" src="assets/images/nyc.gif">
-            <img class="frontPics" src="assets/images/tumbleweed.gif">
-            <img class="frontPics" src="assets/images/trumppelosi.gif">
+            <img class="frontPics" src="./nyc.gif">
+            <img class="frontPics" src="./tumbleweed.gif">
+            <img class="frontPics" src="./trumppelosi.gif">
         </div>
         <br>
         <br>
@@ -149,7 +149,7 @@
 
         function timeOutBanner(timer, $form) {
             $('#MainTitle').text("Time's up!");
-            $('#cardBanner').css('background-image', "url(assets/images/siren.gif)");
+            $('#cardBanner').css('background-image', "url(./siren.gif)");
             clearInterval(timer);
             $('.imgSpace').html("<h2>The correct answer is: </h2><hr>" + $("input[type='button']").attr("ans"));
             var num = 7;
@@ -160,7 +160,7 @@
 
         function lossBanner() {
             $('#MainTitle').text("Nope!");
-            $('#cardBanner').css('background-image', "url(assets/images/IllBlushingArchaeocete-size_restricted.gif)");
+            $('#cardBanner').css('background-image', "url(./IllBlushingArchaeocete-size_restricted.gif)");
             clearInterval(timer);
             $('.imgSpace').html("<h2>The correct answer is: </h2><hr>" + $("input[type='button']").attr(
                 "ans"));
@@ -168,7 +168,7 @@
 
         function winBanner() {
             $('#MainTitle').text("Correct!");
-            $('#cardBanner').css('background-image', "url(assets/images/giphy.gif)");
+            $('#cardBanner').css('background-image', "url(./giphy.gif)");
             clearInterval(timer);
             $('.imgSpace').html("<h2>The correct answer is: </h2><hr>" + $("input[type='button']").attr(
                 "ans"));
